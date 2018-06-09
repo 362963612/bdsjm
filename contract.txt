@@ -1,0 +1,42 @@
+"use strict";
+
+var bdsjm = function() {
+    LocalContractStorage.defineMapProperty(this, "mydataMap");
+    LocalContractStorage.defineProperty(this, "mycount");
+};
+
+bdsjm.prototype = {
+
+    init: function() {
+        this.mycount = 0;
+        this.nasAddress = Blockchain.transaction.from;
+    },
+
+    savetonas: function(myscroe) {
+        var index = this.mycount;
+
+        var mydata = new Object();
+        mydata.index = index;
+        mydata.myscroe = myscroe;
+        mydata.author = Blockchain.transaction.from;
+        this.mydataMap.set(index, JSON.stringify(mydata));
+        this.size += 1;
+    },
+
+    get: function() {
+        var myArray = [];
+        for (var i = 0; i < this.mycount; i++) {
+            var object = JSON.parse(this.mydataMap.get(i));
+            var from = Blockchain.transaction.from;
+            myArray.push(object);
+        }
+        return myArray;
+    }
+
+};
+
+module.exports = bdsjm;
+
+
+3061111caaba9e122635aab4a22d175bcaf3840577c6945e360842db3b94b2f0
+n1uiXrBoxzVoUuZRXuSnD8HU98TCgX3FhYg
