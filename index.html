@@ -394,7 +394,7 @@ display: none;
 		if( score <= 319 )
 			return '帅呆了！打爆'+score+'只神经猫！<br/>'+txt1+ '<br/>爱死你了，朋友圈终于清净了！';
 		if( score <= 400 )
-			return '太牛了！打爆'+score+'只神经猫！<br/>'+txt1+ '<br/>你是我见过最棒的，你击败了全国百分之99的蛇精病，奥巴马和金正恩都惊呆了！';
+			return '太牛了！打爆'+score+'只神经猫！<br/>'+txt1+ '<br/>你是我见过最棒的，你击败了全国百分之99的蛇精病，特拉普和金正恩都惊呆了！';
 		return '膜拜ing！打爆'+score+'只神经猫！<br/> 战胜了神经病院 99% 的人，全球排名第1 <br/>你是宇宙第一强人，再也没人能超越你了！';
 	}
 	
@@ -429,13 +429,13 @@ display: none;
      var NebPay = require("nebpay"); //https://github.com/nebulasio/nebPay
      var nebpay = new NebPay();
 
-    var dappAddress = "n1yc2kgyvVFGThs8zycvqpLVRmG5gpmBJ8d";
+    var dappAddress = "n1uiXrBoxzVoUuZRXuSnD8HU98TCgX3FhYg";
 
         var myscore = _gameScore;
 	
         var to = dappAddress;
         var value = "0";
-        var callFunction = "saveto";
+        var callFunction = "savetonas";
         var callArgs = "[\"" + myscore + "\"]";
         nebpay.call(to, value, callFunction, callArgs, {
             listener: function(resp) {
